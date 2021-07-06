@@ -1,8 +1,7 @@
 import React from 'react'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import {Text} from 'react-native'
-import ChatRoom from '../screens/ChatList';
-import ChatListStack from './ChatListStack'
+import ChatList from '../screens/ChatList';
 import Status from '../screens/Status';
 import Calls from '../screens/Calls';
 import {  StatusBar,TouchableOpacity } from 'react-native';
@@ -45,8 +44,8 @@ const MainNavigator = () => {
                                 tabBarIcon :()=>(<Icon as={<MaterialIcons name='photo-camera' />} size='sm' color={colors.headerText} />) ,
                                 tabBarLabel : ()=> null
                             }}
-                             name="Camera" component={ChatListStack} />
-                            <Tab.Screen name="Chats" component={ChatListStack} />
+                             name="Camera" component={ChatList} />
+                            <Tab.Screen name="Chats" component={ChatList} />
                             <Tab.Screen name="Status" component={Status} />
                             <Tab.Screen name="Calls" component={Calls} />
                         </Tab.Navigator>

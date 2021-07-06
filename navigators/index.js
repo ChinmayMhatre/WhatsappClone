@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import MainNavigator from './Home.js'
 import colors from '../constants/colors'
 import { Text} from 'react-native';
-import { textColor } from 'styled-system';
 import { VStack, HStack, Button, IconButton, Icon, Center, Box, Tabs } from "native-base";
 import { MaterialIcons } from '@expo/vector-icons';
-import Home from './Home'
+import MainNavigator from './MainNavigator'
+import ChatScreen from '../screens/ChatScreen'
 const Stack = createStackNavigator();
 
 
@@ -19,7 +18,7 @@ const RootNavigator = () => {
             >
                 <Stack.Screen
                 name="Home"
-                component={Home}
+                component={MainNavigator}
                 options={{
                 headerStyle:{
                     backgroundColor: colors.header,
@@ -37,6 +36,10 @@ const RootNavigator = () => {
                     </HStack>
                 )
                 }}
+                 />
+                <Stack.Screen
+                name="ChatRoom"
+                component={ChatScreen}
                  />
             </Stack.Navigator>
         </NavigationContainer>
